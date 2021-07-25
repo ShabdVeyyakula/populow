@@ -87,7 +87,7 @@ window.addEventListener('load', (event) => {
             console.log(LatLng);
 
             const map = new google.maps.Map(document.getElementById("map"), {
-                zoom: 13,
+                zoom: 5,
                 center: LatLng,
             });
         querySnapshot.forEach((doc) => {
