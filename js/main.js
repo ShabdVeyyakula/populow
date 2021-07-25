@@ -83,7 +83,7 @@ window.addEventListener('load', (event) => {
     
     
     db.collection("Cities").doc("Mountain House").collection("Points").get().then((querySnapshot) => {
-            var LatLng = {lat: parseInt(localStorage.getItem("lat")), lng: parseInt(localStorage.getItem("lon"))}
+            var LatLng = {lat: 37.7794, lng: 121.5432}
             console.log(LatLng);
 
             const map = new google.maps.Map(document.getElementById("map"), {
