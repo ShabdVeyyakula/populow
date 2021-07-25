@@ -4,9 +4,153 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Dashboard</title>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
+
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+
+    <link rel="stylesheet" href="/css/index.css">
+
+
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&display=swap" rel="stylesheet">
+  <link href="https://cdn.lineicons.com/3.0/lineicons.css" rel="stylesheet">
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=default"></script>
+
+  <script src="/js/map.js"></script>
+
+
 </head>
-<body>
+<body onload="loadCrowdedAreas();">
+
+
+
+    <style>
+        body {
+            font-family: 'Roboto Condensed', sans-serif;
+            overflow-x: hidden;
+            overflow-y: hidden;
+            background-color: #ffffff;
+        }
+
+        #map {
+            height: 1000px;
+            width: 100%;
+            
+        }
+    </style>
+
+    <script>
     
+
+function initMap() {
+    console.log("Hello")
+    map = new google.maps.Map(document.getElementById("map"), {
+      center: { lat: -34.397, lng: 150.644 },
+      zoom: 8,
+    });
+  }
+
+  window.onload=()=>{
+    initMap()
+  };
+
+
+    </script>
+
+    
+
+    <!--Navbar Start-->
+
+        <style>
+            .navbar {
+                position: fixed;
+                
+            }
+            
+        </style>
+
+        <div class="navbar" style="width: 100%; height: 10%; background-color: rgb(255, 255, 255); z-index: 9999;">
+            <div style="margin-left: 1%;" class="row">
+                 <img src="/assets/populowlogo (1).png" alt="" style="width: 40px; height: 40px; margin-top: 10px;">
+                 <h1 style="margin-left: 20px; margin-top: 5px;">Popu-Low</h1>
+            </div>
+                    <div style="width: 500px; height: 50px; background-color: #F5F6F7; border-color: #E1E1E1; border-style: solid; border-radius: 50px;">
+                        <div class="row">
+                            <i class="lni lni-search-alt" style="font-size: 30px; margin-left: 30px; margin-top: 6px;"></i>
+                            <input type="text" style="background-color: inherit; border: none; margin-top: 10px; margin-left: 20px; width: 400px" placeholder="Search">
+
+
+                        </div>
+
+
+                    </div>
+                
+
+                <div class="row" style="margin-right: 50px">
+
+                    <style>
+                        a {
+                            text-decoration: none;
+                            color: black;
+                        }
+                    </style>
+
+                    <center>
+                        <div class="col" style="width: 50PX;">
+                            <a href=""><i class="lni lni-home" style="font-size: 30px;"></i>
+                            </a>
+                            <p>Home</p>
+                        </div>
+                    </center>
+
+                    <div style="width: 20px;"></div>
+
+                    <center>
+                        <div class="col" style="width: 50px;">
+                            <a href="stats.html"><i class="lni lni-stats-up" style="font-size: 30px;"></i>
+                            </a>
+                            <p>Stat</p>
+                        </div>
+
+                    </center>
+
+                    <div style="width: 20px;"></div>
+
+
+                    <center>
+                        <div class="col" style="width: 50px;">
+                            <a href=""><i class="lni lni-exit" style="font-size: 30px;"></i>
+                            </a>
+                           <p style="width: 50px;">Log Out</p>
+                        </div>
+
+                    </center>
+
+                </div>
+        </div>
+                
+
+                </div>
+            </div>
+        </div>
+
+
+    <!--Navbar End-->
+
+    <!--Text and the boxes-->
+    <h1 style="font-size: 60px; color:#2E0E42; padding-top: 120px; padding-left: 31px;"><strong>Statistics</strong></h1>
+    <p style="color:#2E0E42; padding-left: 35px ;">Most crowded areas:</p>
+    <box style="width: 615px; height: 60px; margin-top: 10px; border-radius: 10px; color: white; background-color: #F5F5F5; border-style: none;"></box>
+
+   
 </body>
+
+
 </html>
