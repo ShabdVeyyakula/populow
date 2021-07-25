@@ -15,6 +15,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <script src="/js/auth/signup.js"></script>
 
 </head>
 
@@ -49,7 +50,7 @@
         </div>
         
         <div style="height: 60px; width: 650px; border-color: #E1E1E1; border-style: solid; border-radius: 10px; margin-top: 20px; background-color: #F5F6F7;text-align: center;" class="row">
-            <input id= "pass" type="text" style="margin-top: 2px; margin-left: 20px; height: 50px; width: 340px; border-style: none; background-color: inherit;" placeholder="Username: ">
+            <input id= "username" type="text" style="margin-top: 2px; margin-left: 20px; height: 50px; width: 340px; border-style: none; background-color: inherit;" placeholder="Username: ">
         </div>
 
         <div style="height: 60px; width: 650px; border-color: #E1E1E1; border-style: solid; border-radius: 10px; margin-top: 20px; background-color: #F5F6F7;text-align: center;" class="row">
@@ -57,13 +58,13 @@
         </div>
 
         <div style="height: 60px; width: 650px; border-color: #E1E1E1; border-style: solid; border-radius: 10px; margin-top: 20px; background-color: #F5F6F7;text-align: center;" class="row">
-            <input id= "pass" type="text" style="margin-top: 2px; margin-left: 20px; height: 50px; width: 340px; border-style: none; background-color: inherit;" placeholder="Re-enter Password: ">
+            <input id= "repass" type="text" style="margin-top: 2px; margin-left: 20px; height: 50px; width: 340px; border-style: none; background-color: inherit;" placeholder="Re-enter Password: ">
         </div>
 
         <p style="margin-top: 20px;color: black; font-size: 15px; text-align: center;"><i class="fa fa-square-o" aria-hidden="true"></i> I agree to the <a href="#">Terms</a> and <a href="#">Conditions</a></p>
 
 <center>
-    <button class="start-button" style="width: 140px; height: 40px; margin-top: 20px; text-align: center; border-radius: 10px; font-size: 18px; color: white; background-color: #2E0E42; border-style: none;">Sign up</button>
+    <button onclick="signup()" class="start-button" style="width: 140px; height: 40px; margin-top: 20px; text-align: center; border-radius: 10px; font-size: 18px; color: white; background-color: #2E0E42; border-style: none;">Sign up</button>
 
 </center>
 
@@ -82,6 +83,41 @@
     <img src="/assets/login.png" alt="" style="height:100%; position: fixed; right: 0%; top: 0%;">
     </section>
 <!--Image-->
+
+
+<!-- Insert these scripts at the bottom of the HTML, but before you use any Firebase services -->
+
+  <!-- Firebase App (the core Firebase SDK) is always required and must be listed first -->
+  <script src="https://www.gstatic.com/firebasejs/8.8.0/firebase-app.js"></script>
+
+  <!-- If you enabled Analytics in your project, add the Firebase SDK for Analytics -->
+  <script src="https://www.gstatic.com/firebasejs/8.8.0/firebase-analytics.js"></script>
+
+  <!-- Add Firebase products that you want to use -->
+  <script src="https://www.gstatic.com/firebasejs/8.8.0/firebase-auth.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.8.0/firebase-firestore.js"></script>
+
+<script>
+  // Your web app's Firebase configuration
+  // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+  var firebaseConfig = {
+    apiKey: "AIzaSyBTTn85ElbQG4bAdQeC-61oOgELr-Orb6I",
+    authDomain: "popu-low.firebaseapp.com",
+    projectId: "popu-low",
+    storageBucket: "popu-low.appspot.com",
+    messagingSenderId: "598472294043",
+    appId: "1:598472294043:web:1686b28b0df2db6319d03e",
+    measurementId: "G-S1G2WJ6Y31"
+  };
+  // Initialize Firebase
+  firebase.initializeApp(firebaseConfig);
+  firebase.analytics();
+
+  var db = firebase.firestore();
+
+</script>
+
+
 
 
 

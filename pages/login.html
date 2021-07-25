@@ -16,6 +16,8 @@
   <link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
+  <script src="/js/auth/login.js"></script>
+
 
 </head>
 
@@ -48,15 +50,20 @@
         <div style="height: 10px;"></div>
     
         <div style="height: 60px; width: 650px; border-color: #E1E1E1; border-style: solid; border-radius: 10px; background-color: #F5F6F7; text-align: center;" class="row">
-            <input id= "email" type="text" style="margin-top: 2px; margin-left: 20px; height: 50px; width: 340px; border-style: none; background-color: inherit;" placeholder="Email: ">
+            <input id= "emailtxt" type="text" style="margin-top: 2px; margin-left: 20px; height: 50px; width: 340px; border-style: none; background-color: inherit;" placeholder="Email: ">
         </div>
         
         <div style="height: 60px; width: 650px; border-color: #E1E1E1; border-style: solid; border-radius: 10px; margin-top: 20px; background-color: #F5F6F7;text-align: center;" class="row">
-            <input id= "pass" type="text" style="margin-top: 2px; margin-left: 20px; height: 50px; width: 340px; border-style: none; background-color: inherit;" placeholder="Password: ">
+            <input id= "passtxt" type="password" style="margin-top: 2px; margin-left: 20px; height: 50px; width: 340px; border-style: none; background-color: inherit;" placeholder="Password: ">
         </div>
 
+        <script>
+            
+        </script>
+
+
 <center>
-    <button class="start-button" style="width: 140px; height: 40px; margin-top: 50px; text-align: center; border-radius: 10px; font-size: 18px; color: white; background-color: #2E0E42; border-style: none;">Login</button>
+    <button onclick="login()" id="signIn" class="start-button" style="width: 140px; height: 40px; margin-top: 50px; text-align: center; border-radius: 10px; font-size: 18px; color: white; background-color: #2E0E42; border-style: none;">Login</button>
 
 </center>
 
@@ -77,7 +84,35 @@
 <!--Image-->
 
 
+ <!-- Insert these scripts at the bottom of the HTML, but before you use any Firebase services -->
 
+  <!-- Firebase App (the core Firebase SDK) is always required and must be listed first -->
+  <script src="https://www.gstatic.com/firebasejs/8.8.0/firebase-app.js"></script>
+
+  <!-- If you enabled Analytics in your project, add the Firebase SDK for Analytics -->
+  <script src="https://www.gstatic.com/firebasejs/8.8.0/firebase-analytics.js"></script>
+
+  <!-- Add Firebase products that you want to use -->
+  <script src="https://www.gstatic.com/firebasejs/8.8.0/firebase-auth.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.8.0/firebase-firestore.js"></script>
+</body>
+
+<script>
+  // Your web app's Firebase configuration
+  // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+  var firebaseConfig = {
+    apiKey: "AIzaSyBTTn85ElbQG4bAdQeC-61oOgELr-Orb6I",
+    authDomain: "popu-low.firebaseapp.com",
+    projectId: "popu-low",
+    storageBucket: "popu-low.appspot.com",
+    messagingSenderId: "598472294043",
+    appId: "1:598472294043:web:1686b28b0df2db6319d03e",
+    measurementId: "G-S1G2WJ6Y31"
+  };
+  // Initialize Firebase
+  firebase.initializeApp(firebaseConfig);
+  firebase.analytics();
+</script>
 
 
 </body>
